@@ -11,10 +11,9 @@ public class MyStudent {
         this.firstName = firstName;
         this.score = score;
     }
-    @Override
     public String toString() {
         String s = "";
-        s = String.format("%s%d : ", firstName, score);
+        s = String.format("%s: %.2f", firstName, score);
         return s;
     }
 }

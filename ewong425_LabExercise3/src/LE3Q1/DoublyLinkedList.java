@@ -130,12 +130,11 @@ public class DoublyLinkedList<E> {
      * @return the node containing the element e (or null if empty)
      */
     public Node<E> findNode(E e){
-        //your code
-        Node<E> iterator = header;
+        Node<E> iterator = header.getNext();
         if(size == 0) {
             return null;
         }
-        while(iterator != null) {
+        for(int i=0; i<size; i++) {
             if (e == iterator.getElement()) {
                 return iterator;
             }
@@ -147,11 +146,11 @@ public class DoublyLinkedList<E> {
      * Produces a string representation of the contents of the list.
      */
     @Override
-    public String toString(){
-        ArrayList<E> arrList = new ArrayList<>(size);
-        Node<E> temp = header;
+    public String toString() {
+        ArrayList<E> arrList = new ArrayList<>();
+        Node<E> temp = header.getNext();
         for(int i=0; i<size; i++) {
-            arrList.add(temp.getElement());
+            arrList.add(i, temp.getElement());
             temp = temp.getNext();
         }
         return arrList.toString();
